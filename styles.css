@@ -1,0 +1,147 @@
+/* global vars */
+:root {
+  --header_height: 65px;
+  --about_me_w: 900px;
+  --green: #22ba22;
+  --header_gray:#333 ;
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'Doto'; 
+    src: url('./fonts/Doto/static/Doto-Bold.ttf'); /*URL to font*/
+}
+
+/* Basic styles */
+body {
+    background-color: #474747;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    height: var(--header_height);
+    background-color: var(--header_gray);
+    display: block;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+}
+
+/* Navigation improvements */
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px; /* Adds spacing between nav buttons */
+    padding: 10px;
+    background-color: var(--header_gray);
+}
+
+.nav-name{
+    font-family: 'Doto';
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    background-color:  var(--header_gray);
+    color: var(--green);
+    margin-top: -20px;
+    overflow: hidden;
+    width:0;
+    white-space:nowrap;
+    animation: typing 10s steps(80) 2s forwards infinite;
+}
+
+/* Create the typing effect */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+.nav-button {
+    padding: 10px 15px; /* Adjusted padding for better spacing */
+    font-size: 16px; /* Increased font size for readability */
+    color: var(--green);
+    font-family: "Doto";
+    text-align: center;
+    text-decoration: none;
+    background-color: #333;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* General container styling for better spacing */
+.page {
+    position: relative; /* Changed from absolute for better flow */
+    padding: calc(var(--header_height) + 20px) 5vw; /* Adjusted padding for responsiveness */
+    display: flex;
+}
+
+/* Portrait styling */
+#home.page .portrait {
+    position: relative; /* Changed from absolute for better flow */
+    max-width: 50%; /* Ensures responsiveness */
+    margin: 20px auto; /* Centers the portrait */
+    height: auto;
+    border-radius: 9px;
+}
+
+/* Improved About Me section */
+.abtme-h, .abtme-p {
+    position: relative; /* Changed from absolute for better flow */
+    margin: 20px auto; /* Centers the divs horizontally */
+    max-width: 90%; /* Ensures responsiveness */
+    width: var(--about_me_w);
+    background-color: var(--green);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
+    animation: none; /* Removed animations for simplicity */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .abtme-h, .abtme-p {
+        width: 100%; /* Full width on smaller screens */
+        padding: 15px;
+    }
+
+    #home.page .portrait {
+        max-width: 80%; /* Adjust portrait size for smaller screens */
+    }
+
+    .nav {
+        flex-direction: column; /* Stack nav buttons vertically */
+        align-items: flex-start;
+    }
+
+    .nav-button {
+        width: 100%; /* Full width for nav buttons */
+        text-align: left;
+    }
+}
+
+#home.page {
+    background-color: #525150;
+}
+
+#home {
+    display: block;
+}
+

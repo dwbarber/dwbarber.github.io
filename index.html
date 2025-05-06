@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dwbarber.net</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1 class="nav-name" >dwbarber.net</h1>
+
+      <!-- Navigation buttons -->
+        <div class="nav">
+            <button class="nav-button" onclick="showPage('home')">Home</button>
+            <button class="nav-button" onclick="showPage('about')">About</button>
+            <button class="nav-button" onclick="showPage('projects')">Projects</button>
+        </div>
+    </div>
+
+
+  <!-- Content Section -->
+  <div id="home" class="page">
+    <img  class="portrait" src='./images/portrait.jpg' >
+    <h1 class="abtme-h" >Hello! My name is David Barber</h1>
+    <div class="abtme-p"
+        <p>I'm a super curious engineering student that thoroughly enjoys learning about things 
+        that don't initially make sense. I enjoy solving problems that make me think and challenge 
+        me to come up with creative solutions. Combining these two passions has lead me to take up 
+        interest in both mechanical and computer engineering. I've found that I'm most interested 
+        in computer design and electromechanical systems, and I'm aiming to learn effective design 
+        methodologies that can enhance my individual capabilities and teamwork dynamic.</p> 
+    </div>
+    <div class="info"
+        <p>More information should go here: contact info, school, etc.</p>
+  </div>
+
+  <div id="about" class="page" style="display: none;">
+    <h1>About Us</h1>
+    <p>This is the about page content.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
