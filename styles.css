@@ -14,7 +14,7 @@
 
 /* Basic styles */
 body {
-    background-color: #474747;
+    background-color: #3f3f3f;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -35,6 +35,7 @@ body {
 .nav {
     display: flex;
     justify-content: flex-end;
+    width: 100vw;
     align-items: center;
     gap: 10px; /* Adds spacing between nav buttons */
     padding: 10px;
@@ -45,13 +46,14 @@ body {
     font-family: 'Doto';
     position: absolute;
     top: 50%;
-    left: 10px;
+    left: 30px;
     background-color:  var(--header_gray);
     color: var(--green);
     margin-top: -20px;
     overflow: hidden;
     width:0;
     white-space:nowrap;
+    z-index: 2;
     animation: typing 10s steps(80) 2s forwards infinite;
 }
 
@@ -61,7 +63,7 @@ body {
     width: 0;
   }
   50% {
-    width: 100%;
+    width: 1000px;
   }
   100% {
     width: 0;
@@ -78,6 +80,7 @@ body {
     background-color: #333;
     border: none;
     cursor: pointer;
+    z-index: 3;
 }
 
 .nav-button:hover {
@@ -86,8 +89,11 @@ body {
 }
 
 /* General container styling for better spacing */
+
 .page {
+    margin-top: var(--header_height); /* Ensures content is below the header */
     position: relative; /* Changed from absolute for better flow */
+    background-color: #444444;
     padding: calc(var(--header_height) + 20px) 5vw; /* Adjusted padding for responsiveness */
     display: flex;
 }
@@ -95,17 +101,18 @@ body {
 /* Portrait styling */
 #home.page .portrait {
     position: relative; /* Changed from absolute for better flow */
-    max-width: 50%; /* Ensures responsiveness */
-    margin: 20px auto; /* Centers the portrait */
+    max-width: 30%; /* Ensures responsiveness */
+    margin: 20px 0 20px auto; /* Aligns the portrait to the right */
     height: auto;
     border-radius: 9px;
+
 }
 
 /* Improved About Me section */
 .abtme-h, .abtme-p {
-    position: relative; /* Changed from absolute for better flow */
-    margin: 20px auto; /* Centers the divs horizontally */
-    max-width: 90%; /* Ensures responsiveness */
+    position: relative; 
+    margin: 20px auto; 
+    max-width: 90%; 
     width: var(--about_me_w);
     background-color: var(--green);
     color: white;
@@ -121,24 +128,34 @@ body {
         width: 100%; /* Full width on smaller screens */
         padding: 15px;
     }
-
+    
     #home.page .portrait {
-        max-width: 80%; /* Adjust portrait size for smaller screens */
+        max-width: 100%; /* Adjust portrait size for smaller screens */
+    }
+
+    .nav-name {
+        font-size: 15px; /* Adjust font size for smaller screens */
+        left: 5px; /* Adjust position */
     }
 
     .nav {
-        flex-direction: column; /* Stack nav buttons vertically */
+        flex-direction: row; /* Stack nav buttons vertically */
+        width: 100vw;
         align-items: flex-start;
     }
 
     .nav-button {
-        width: 100%; /* Full width for nav buttons */
-        text-align: left;
+        margin: 5px;
+        padding-left: 5px; /* Adjusted padding for better spacing */
+        padding-right: 5px; /* Adjusted padding for better spacing */
+        text-align: center;
     }
 }
 
 #home.page {
     background-color: #525150;
+    padding-right: 15%;
+    padding-left: 15%;
 }
 
 #home {
