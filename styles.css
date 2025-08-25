@@ -4,6 +4,17 @@
   --about_me_w: 900px;
   --green: #22ba22;
   --header_gray:#333 ;
+  --background_color: --var(--bs-gray-800);
+}
+
+ul {
+    list-style-type:circle; 
+}
+
+html, body {
+  background-color: var(--background_color);  /* or whatever dark grey you want */
+  margin: 0;
+  padding: 0;
 }
 
 /* Fonts */
@@ -14,7 +25,7 @@
 
 /* Basic styles */
 body {
-    background-color: #3f3f3f;
+    background-color: var(--background_color);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -91,9 +102,11 @@ body {
 /* General container styling for better spacing */
 
 .page {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
     margin-top: var(--header_height); /* Ensures content is below the header */
     position: relative; /* Changed from absolute for better flow */
-    background-color: #444444;
+    background-color: --var(--background_color);
     padding: calc(var(--header_height) + 20px) 5vw; /* Adjusted padding for responsiveness */
     display: flex;
 }
@@ -101,16 +114,24 @@ body {
 /* Portrait styling */
 #home.page .portrait {
     position: relative; /* Changed from absolute for better flow */
+    display: grid;
+    grid-column-start: 4;
+    grid-column-end: 6;
     max-width: 30%; /* Ensures responsiveness */
     margin: 20px 0 20px auto; /* Aligns the portrait to the right */
     height: auto;
-    border-radius: 9px;
+    border-radius: 50%;
+    clip-path: circle();
+    border: 7px solid var(--header_gray)
 
 }
 
 /* Improved About Me section */
 .abtme-h, .abtme-p {
     position: relative; 
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 4;
     margin: 20px auto; 
     max-width: 90%; 
     width: var(--about_me_w);
